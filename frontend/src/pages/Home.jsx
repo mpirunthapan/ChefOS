@@ -30,15 +30,19 @@ export default function Home() {
         if (ingredients.length === 0) return
         setLoading(true)
         setError(null)
+        console.log('API URL:', import.meta.env.VITE_API_URL)
+        console.log('Calling suggest with:', ingredients)
         try {
-        const res = await suggestDishes(ingredients, userId)
-        setDishes(res.data.dishes)
-        setSessionId(res.data.session_id)
-        navigate('/suggestions')
-        } catch {
-        setError('Something went wrong. Please try again.')
+            const res = await suggestDishes(ingredients, userId)
+            console.log('Response:', res.data)
+            setDishes(res.data.dishes)
+            setSessionId(res.data.session_id)
+            navigate('/suggestions')
+        } catch (err) {
+            console.log('Error:', err)
+            setError('Something went wrong. Please try again.')
         } finally {
-        setLoading(false)
+            setLoading(false)
         }
     }
 
