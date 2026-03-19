@@ -106,13 +106,12 @@ export default function Home() {
             className="w-full bg-orange-400 hover:bg-orange-500 disabled:opacity-40 disabled:cursor-not-allowed text-black font-bold py-4 rounded-xl text-lg transition-colors cursor-pointer"
             >
             {loading ? (
-                <span className="flex items-center justify-center gap-2">
-                <span className="animate-spin">⏳</span> Finding recipes...
-                </span>
-            ) : (
-                '🔍 Find Recipes'
-            )}
-            </button>
+  <span className="flex items-center justify-center gap-2">
+    <span className="animate-spin">⏳</span> Finding recipes... (first load may take ~60s)
+  </span>
+) : (
+  '🔍 Find Recipes'
+)}
 
             {ingredients.length > 0 && (
             <button
