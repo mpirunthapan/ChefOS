@@ -111,7 +111,7 @@ export default function Home() {
             >
             {loading ? (
             <span className="flex items-center justify-center gap-2">
-                <span className="animate-spin">⏳</span> Finding recipes... (first load may take ~60s)
+                <span className="animate-spin">⏳</span> Finding recipes...
             </span>
             ) : (
             '🔍 Find Recipes'
